@@ -64,7 +64,6 @@ Initially, no data is present.
 You need to add data to see results in API and Dashboard.
 
 ---
-### Open New Terminal and Navigate to RootFolder(Storelytics)
 ### Easiest Way (Recommended)
 
 1. Open:
@@ -76,6 +75,7 @@ POST /events/ingest
 5. Click Execute
 
 ---
+### Open New Terminal and Navigate to Root Folder(Storelytics)
 ### Ingest Pipeline Output Data (Pre-Generated Event Data)
 
 **File**:
