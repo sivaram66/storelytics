@@ -86,11 +86,7 @@ data/events/detected_events.jsonl
 ### Windows (PowerShell)
 
 ```powershell
-$body = Get-Content "data/events/detected_events.jsonl" -Raw Invoke-RestMethod `
-  -Uri "http://127.0.0.1:8000/events/ingest" `
-  -Method POST `
-  -Body $body `
-  -ContentType "application/json"
+$body = Get-Content "data/events/detected_events.jsonl" -Raw; Invoke-RestMethod -Uri "http://127.0.0.1:8000/events/ingest" -Method POST -Body $body -ContentType "application/json"
 ```
 ### Mac / Linux
 ```
