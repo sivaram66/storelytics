@@ -16,6 +16,7 @@ Storelytics is a simple system that converts store activity data into useful ins
 Open your terminal and run:
 
 git clone https://github.com/sivaram66/storelytics.git
+
 cd storelytics
 
 ---
