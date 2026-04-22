@@ -89,6 +89,18 @@ curl -X POST "http://127.0.0.1:8000/events/ingest" -H "Content-Type: application
 ```
 
 ---
+### Use Your Own Test Data
+
+You can also provide your own file.
+- Place it inside:  
+  data/events/
+
+- Supported formats:
+  - JSON Lines (.jsonl) — recommended  
+  - JSON Array (.json)
+
+Then use the same ingestion commands shown above with your filename.
+
 
 ## View Results
 
