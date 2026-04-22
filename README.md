@@ -51,71 +51,24 @@ http://127.0.0.1:8000/dashboard/live
 ## Add Data (Important Step)
 
 Initially, no data is present.  
-You need to add data to see results.
-
----
-## 📥 Data Ingestion
-
-### Endpoint
-POST /events/ingest
+You need to add data to see results in API and Dashboard.
 
 ---
 
-### Supported Input Formats
-
-You can send event data in:
-
-- JSON Lines (.jsonl) — recommended  
-  Each line = one event  
-
-- JSON Array (.json)  
-  Standard list of events  
-
----
-
-### 📁 Step 1 — Place Your File
-
-Put your data file inside:
-
-data/events/
-
-Example:
-data/events/sample_events.jsonl
-
----
-
-### 🚀 Step 2 — Ingest Data
-
-#### 🪟 Windows (PowerShell)
-
-`powershell
-$body = Get-Content "data/events/sample_events.jsonl" -Raw
-
-Invoke-RestMethod `
-  -Uri "http://127.0.0.1:8000/events/ingest" `
-  -Method POST `
-  -Body $body `
-  -ContentType "application/json"
 ### Easiest Way (Recommended)
 
 1. Open:
 http://127.0.0.1:8000/docs
-
 2. Find:
 POST /events/ingest
-
 3. Click "Try it out"
-
 4. Paste data or upload file
-
 5. Click Execute
 
 ---
-
-### Ingest Pipeline Output Data(Pre-Generated Event Data)
+### Ingest Pipeline Output Data (Pre-Generated Event Data)
 
 **File**:
-
 data/events/detected_events.jsonl
 
 ---
