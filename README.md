@@ -73,7 +73,7 @@ POST /events/ingest
 
 ### 💻 Using Sample Data
 
-File:
+**File**:
 
 data/events/sample_events.jsonl
 
@@ -81,7 +81,7 @@ data/events/sample_events.jsonl
 
 ### 🪟 Windows (PowerShell)
 
-`powershell
+```powershell
 $body = Get-Content "data/events/sample_events.jsonl" -Raw
 
 Invoke-RestMethod `
