@@ -37,6 +37,13 @@ This will:
 
 Wait ~30–40 seconds
 
+### Build Locally
+If you want to build the Docker image locally instead of pulling it from Docker Hub:
+
+Run:
+```
+docker compose up --build
+```
 ---
 
 ## Open the Application
@@ -135,10 +142,12 @@ http://127.0.0.1:8000/dashboard/live
 ---
 
 ## Reset (Optional)
-
+```
 docker compose down -v
-
+```
+```
 docker compose up
+```
 
 ---
 
