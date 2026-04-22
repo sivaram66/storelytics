@@ -17,15 +17,18 @@ Open your terminal and run:
 ```
 git clone https://github.com/sivaram66/storelytics.git
 ```
-
-```cd storelytics```
+```
+cd storelytics
+```
 
 ---
 
 ### Step 2 — Start the Application
 
 Run:
-```docker compose up```
+```
+docker compose up
+```
 
 This will:
 - Start backend server
