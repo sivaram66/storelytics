@@ -15,24 +15,21 @@ Storelytics is a simple system that converts store activity data into useful ins
 
 Open your terminal and run:
 
-git clone https://github.com/sivaram66/storelytics.git
+```git clone https://github.com/sivaram66/storelytics.git ```
 
-cd storelytics
+```cd storelytics```
 
 ---
 
 ### Step 2 — Start the Application
 
 Run:
-
-docker compose up
-
-  This will:
+```docker compose up```
+This will:
 - Start backend server
 - Start PostgreSQL database
 - Automatically create tables
-
- Wait ~30–40 seconds
+Wait ~30–40 seconds
 
 ---
 
