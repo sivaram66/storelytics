@@ -64,7 +64,7 @@ Initially, no data is present.
 You need to add data to see results in API and Dashboard.
 
 ---
-
+### Open New Terminal and Navigate to RootFolder(Storelytics)
 ### Easiest Way (Recommended)
 
 1. Open:
