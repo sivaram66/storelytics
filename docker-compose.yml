@@ -1,0 +1,45 @@
+services:
+  
+  db:
+    image: postgres:15-alpine
+    container_name: store_db
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: storeuser
+      POSTGRES_PASSWORD: storepass
+      POSTGRES_DB: storedb
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./scripts/init_db.sql:/docker-entrypoint-initdb.d/init_db.sql
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U storeuser -d storedb"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  
+  api:
+    build: .
+    container_name: store_api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql+asyncpg://storeuser:storepass@db:5432/storedb?ssl=false
+      APP_ENV: local
+      STALE_FEED_THRESHOLD_MINUTES: 10
+      ANOMALY_QUEUE_SPIKE_THRESHOLD: 5
+      ANOMALY_CONVERSION_DROP_THRESHOLD: 0.3
+      DEAD_ZONE_MINUTES: 30
+    depends_on:
+      db:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 15s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  pgdata:

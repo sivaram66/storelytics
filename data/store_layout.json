@@ -1,0 +1,82 @@
+{
+  "store_id": "STORE_PURPLLE_001",
+  "store_name": "Purplle Beauty Store",
+  "city": "Bangalore",
+  "open_hours": {
+    "open": "10:00",
+    "close": "22:00"
+  },
+  "cameras": {
+    "CAM_1": {
+      "file": "CAM 1.mp4",
+      "role": "main_floor",
+      "zones_covered": ["SKINCARE"]
+    },
+    "CAM_2": {
+      "file": "CAM 2.mp4",
+      "role": "main_floor",
+      "zones_covered": ["MAKEUP", "ACCESSORIES"]
+    },
+    "CAM_3": {
+      "file": "CAM 3.mp4",
+      "role": "entry_exit",
+      "zones_covered": ["ENTRY_THRESHOLD"]
+    },
+    "CAM_4": {
+      "file": "CAM 4.mp4",
+      "role": "stockroom",
+      "zones_covered": ["STOCKROOM"]
+    },
+    "CAM_5": {
+      "file": "CAM 5.mp4",
+      "role": "billing",
+      "zones_covered": ["BILLING"]
+    }
+  },
+  "zones": [
+    {
+      "zone_id": "ENTRY_THRESHOLD",
+      "zone_name": "Entry / Exit Threshold",
+      "camera": "CAM_3",
+      "is_entry_exit": true,
+      "is_staff_only": false
+    },
+    {
+      "zone_id": "SKINCARE",
+      "zone_name": "Skincare Section",
+      "camera": "CAM_1",
+      "is_entry_exit": false,
+      "is_staff_only": false,
+      "brands": ["FarmStay", "The Face Shop", "COSRX", "Minimalist", "Derma"]
+    },
+    {
+      "zone_id": "MAKEUP",
+      "zone_name": "Makeup Section",
+      "camera": "CAM_2",
+      "is_entry_exit": false,
+      "is_staff_only": false,
+      "brands": ["Lakme", "Maybelline", "Faces Canada", "Swiss Beauty", "6MARS"]
+    },
+    {
+      "zone_id": "ACCESSORIES",
+      "zone_name": "Accessories Section",
+      "camera": "CAM_2",
+      "is_entry_exit": false,
+      "is_staff_only": false
+    },
+    {
+      "zone_id": "BILLING",
+      "zone_name": "Billing Counter",
+      "camera": "CAM_5",
+      "is_entry_exit": false,
+      "is_staff_only": false
+    },
+    {
+      "zone_id": "STOCKROOM",
+      "zone_name": "Stock Room",
+      "camera": "CAM_4",
+      "is_entry_exit": false,
+      "is_staff_only": true
+    }
+  ]
+}

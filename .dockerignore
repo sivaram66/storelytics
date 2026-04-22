@@ -1,0 +1,53 @@
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual env
+venv/
+
+# Git
+.git
+.gitignore
+
+# Env
+.env
+
+# Test / coverage
+.pytest_cache/
+.coverage
+.coveragerc
+
+# Node (if any)
+node_modules/
+
+# HEAVY FILES (CRITICAL)
+data/clips/
+data/events/
+*.mp4
+*.avi
+*.mov
+*.mkv
+
+# ML models
+*.pt
+
+# Misc
+*.zip
+*.tar
+
+
+__pycache__/
+*.pyc
+.env
+.git
+
+data/
+videos/
+dataset/
+pipeline/
+*.mp4
+*.avi
+*.mov
+*.pt
