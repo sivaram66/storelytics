@@ -25,6 +25,7 @@ Open your terminal and run:
 
 Run:
 ```docker compose up```
+
 This will:
 - Start backend server
 - Start PostgreSQL database
