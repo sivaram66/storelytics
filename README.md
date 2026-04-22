@@ -34,6 +34,7 @@ This will:
 - Start backend server
 - Start PostgreSQL database
 - Automatically create tables
+
 Wait ~30–40 seconds
 
 ---
