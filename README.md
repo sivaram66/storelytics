@@ -87,11 +87,10 @@ $body = Get-Content "data/events/sample_events.jsonl" -Raw Invoke-RestMethod `
   -Method POST `
   -Body $body `
   -ContentType "application/json"
-
-### Mac / Linux
-
-curl -X POST "http://127.0.0.1:8000/events/ingest" -H "Content-Type: application/json" --data-binary @data/events/sample_events.jsonl
 ```
+### Mac / Linux
+```curl -X POST "http://127.0.0.1:8000/events/ingest" -H "Content-Type: application/json" --data-binary @data/events/sample_events.jsonl```
+
 ---
 
 ## 📊 View Results
