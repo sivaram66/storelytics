@@ -1,4 +1,4 @@
-# 🧠 Storelytics — Real-Time Retail Insights
+# Storelytics — Real-Time Retail Insights
 
 Storelytics is a simple system that converts store activity data into useful insights such as:
 - Number of visitors
@@ -9,7 +9,7 @@ Storelytics is a simple system that converts store activity data into useful ins
 
 ---
 
-## 🚀 Quick Start (Very Simple)
+## Quick Start (Very Simple)
 
 ### Step 1 — Download the Project
 
@@ -32,11 +32,11 @@ docker compose up
 - Start PostgreSQL database
 - Automatically create tables
 
-⏳ Wait ~10–20 seconds
+ Wait ~30–40 seconds
 
 ---
 
-## 🌐 Open the Application
+## Open the Application
 
 After startup, open:
 
@@ -48,14 +48,55 @@ http://127.0.0.1:8000/dashboard/live
 
 ---
 
-## 📥 Add Data (Important Step)
+## Add Data (Important Step)
 
 Initially, no data is present.  
 You need to add data to see results.
 
 ---
+## 📥 Data Ingestion
 
-### ✅ Easiest Way (Recommended)
+### Endpoint
+POST /events/ingest
+
+---
+
+### Supported Input Formats
+
+You can send event data in:
+
+- JSON Lines (.jsonl) — recommended  
+  Each line = one event  
+
+- JSON Array (.json)  
+  Standard list of events  
+
+---
+
+### 📁 Step 1 — Place Your File
+
+Put your data file inside:
+
+data/events/
+
+Example:
+data/events/sample_events.jsonl
+
+---
+
+### 🚀 Step 2 — Ingest Data
+
+#### 🪟 Windows (PowerShell)
+
+`powershell
+$body = Get-Content "data/events/sample_events.jsonl" -Raw
+
+Invoke-RestMethod `
+  -Uri "http://127.0.0.1:8000/events/ingest" `
+  -Method POST `
+  -Body $body `
+  -ContentType "application/json"
+### Easiest Way (Recommended)
 
 1. Open:
 http://127.0.0.1:8000/docs
@@ -71,7 +112,7 @@ POST /events/ingest
 
 ---
 
-### 💻 Using Sample Data
+### Ingest Pipeline Output Data(Pre-Generated Event Data)
 
 **File**:
 
@@ -96,7 +137,7 @@ curl -X POST "http://127.0.0.1:8000/events/ingest" -H "Content-Type: application
 
 ---
 
-## 📊 View Results
+## View Results
 
 Metrics:
 http://127.0.0.1:8000/stores/STORE_PURPLLE_001/metrics
@@ -109,15 +150,14 @@ http://127.0.0.1:8000/stores/STORE_PURPLLE_001/anomalies
 
 ---
 
-## 📺 Live Dashboard
+## Live Dashboard
 
 http://127.0.0.1:8000/dashboard/live
-
-👉 Shows real-time updates
+ Shows real-time updates
 
 ---
 
-## ⚙️ Important Notes
+## Important Notes
 
 - No manual setup required
 - Database and tables are auto-created
@@ -126,14 +166,15 @@ http://127.0.0.1:8000/dashboard/live
 
 ---
 
-## 🔁 Reset (Optional)
+## Reset (Optional)
 
 docker compose down -v
+
 docker compose up
 
 ---
 
-## 🧠 Workflow
+## Workflow
 
 1. Run app  
 2. Add data  
@@ -142,6 +183,6 @@ docker compose up
 
 ---
 
-## 🎯 Done!
+## Done!
 
-Your system is ready 🚀
+Your system is ready 
