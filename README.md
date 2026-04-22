@@ -27,7 +27,7 @@ Run:
 
 docker compose up
 
-👉 This will:
+  This will:
 - Start backend server
 - Start PostgreSQL database
 - Automatically create tables
@@ -75,14 +75,14 @@ POST /events/ingest
 
 **File**:
 
-data/events/sample_events.jsonl
+data/events/detected_events.jsonl
 
 ---
 
 ### Windows (PowerShell)
 
 ```powershell
-$body = Get-Content "data/events/sample_events.jsonl" -Raw Invoke-RestMethod `
+$body = Get-Content "data/events/detected_events.jsonl" -Raw Invoke-RestMethod `
   -Uri "http://127.0.0.1:8000/events/ingest" `
   -Method POST `
   -Body $body `
@@ -90,7 +90,7 @@ $body = Get-Content "data/events/sample_events.jsonl" -Raw Invoke-RestMethod `
 ```
 ### Mac / Linux
 ```
-curl -X POST "http://127.0.0.1:8000/events/ingest" -H "Content-Type: application/json" --data-binary @data/events/sample_events.jsonl
+curl -X POST "http://127.0.0.1:8000/events/ingest" -H "Content-Type: application/json" --data-binary @data/events/detected_events.jsonl
 
 ```
 
