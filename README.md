@@ -82,9 +82,7 @@ data/events/sample_events.jsonl
 ### 🪟 Windows (PowerShell)
 
 ```powershell
-$body = Get-Content "data/events/sample_events.jsonl" -Raw
-
-Invoke-RestMethod `
+$body = Get-Content "data/events/sample_events.jsonl" -Raw Invoke-RestMethod `
   -Uri "http://127.0.0.1:8000/events/ingest" `
   -Method POST `
   -Body $body `
@@ -93,7 +91,7 @@ Invoke-RestMethod `
 ### Mac / Linux
 
 curl -X POST "http://127.0.0.1:8000/events/ingest" -H "Content-Type: application/json" --data-binary @data/events/sample_events.jsonl
-
+```
 ---
 
 ## 📊 View Results
