@@ -62,7 +62,6 @@ I do lose strict database-level type checking on the metadata fields. To handle 
 For timestamps, I decided to store everything in IST (+05:30) since the store is in Mumbai. Initially, AI suggested using UTC, which is the standard for APIs, but when I looked at the actual video footage, all the timestamps there were in IST.
 
 During debugging, I realized it would be much easier if the timestamps in the database matched what I was seeing in the video directly. Otherwise, I'd constantly have to convert between UTC and IST in my head.
-
 So I chose to stick with IST throughout. It made debugging and validation much more straightforward, even though it’s slightly different from the usual convention.
 ---
 
