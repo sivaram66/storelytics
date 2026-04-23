@@ -79,7 +79,7 @@ POST /events/ingest
 ### Ingest Pipeline Output Data (Pre-Generated Event Data)
 
 **File**:
-data/events/detected_events.jsonl
+data/events/**detected_events.jsonl**
 
 ---
 
